@@ -2,6 +2,9 @@
 ro.charger.disable_init_blank=true
 ro.charger.enable_suspend=true
 
+# Graphics
+ro.launcher.blur.appLaunch=0
+
 # LMKD
 ro.lmk.low=1001
 ro.lmk.medium=800
