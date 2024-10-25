@@ -108,3 +108,7 @@ on init
     # report max frequency to unity tasks.
     write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
     write /proc/sys/kernel/sched_lib_mask_force 255
+
+on property:persist.sys.device_provisioned=1 && property:sys.boot_completed=1
+    # Cap dex2oat cpu utilization
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 60
