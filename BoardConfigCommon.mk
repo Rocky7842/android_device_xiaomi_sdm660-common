@@ -68,10 +68,7 @@ AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := false
 
 # Display
-TARGET_USES_HWC2 := true
-TARGET_USES_GRALLOC1 := true
-TARGET_USES_GRALLOC4 := true
-TARGET_USES_ION := true
+SOONG_CONFIG_qtidisplay_gralloc4 := true
 
 # FM
 ifeq ($(BOARD_HAVE_QCOM_FM),true)
@@ -96,6 +93,9 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 # Init
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_sdm660
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm660
+
+# Media
+TARGET_USES_ION := true
 
 # Partitions
 AB_OTA_UPDATER := false
