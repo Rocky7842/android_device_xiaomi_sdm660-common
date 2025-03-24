@@ -39,5 +39,7 @@ genfscon sysfs /touchpanel                                      u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video3/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@1/video4linux/video4/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@2/video4linux/video5/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/ca0c000.qcom,cci/ca0c000.qcom,cci:qcom,camera@3/video4linux/video5/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/soc/c178000.i2c/i2c-4/4-0062/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:fpc1020/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:hall_switch/wakeup u:object_r:sysfs_wakeup:s0
