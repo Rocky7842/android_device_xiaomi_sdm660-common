@@ -1,12 +1,14 @@
 # jasmine package version: V11.0.28.0.QDIMIXM, unless stated otherwise
 # Cat S62Pro package version: sdm660_64-user 11 RKQ1.210406.002 1.015.00, unless stated otherwise
 
+# libadsp_hvx_callback_skel and libadsp_hvx_stub depend on device specific camera lib, libmmcamera_dbg
+
 # ADSP - from S62Pro
 vendor/bin/adsprpcd|5e246a6f5d2dca27e29b233a17e4673532191b95
 vendor/bin/cdsprpcd|ea126ed2f1b11622547239f331b8013320c59ad2
 vendor/lib/libadsp_default_listener.so|c822c536d9776ca2d60bf5a158531544f20c4829
-vendor/lib/libadsp_hvx_callback_skel.so|349803cd69d676e386b2a923c128c49aeefdeb4a
-vendor/lib/libadsp_hvx_stub.so|59e9f81b8d3a41a69badf201acee57615f822013
+vendor/lib/libadsp_hvx_callback_skel.so;DISABLE_DEPS|349803cd69d676e386b2a923c128c49aeefdeb4a
+vendor/lib/libadsp_hvx_stub.so;DISABLE_DEPS|59e9f81b8d3a41a69badf201acee57615f822013
 vendor/lib/libadsprpc.so|3da7471cbfb2f26bb997d21098282697ee1965e4
 vendor/lib/libcdsp_default_listener.so|1c24530e998d6ea908b86afd20470e7e3d0a48c0
 vendor/lib/libcdsprpc.so|4ef30602663e13d44e1c7dd09db927fa4e6947ae
