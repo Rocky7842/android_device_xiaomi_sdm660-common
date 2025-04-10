@@ -1,8 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020 The LineageOS Project
-#
+# SPDX-FileCopyrightText: 2016 The CyanogenMod Project
+# SPDX-FileCopyrightText: 2017-2024 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
 
@@ -26,34 +25,39 @@ CLEAN_VENDOR=true
 
 ONLY_COMMON=
 ONLY_DEVICE_COMMON=
+ONLY_FIRMWARE=
 ONLY_TARGET=
 KANG=
 SECTION=
 
 while [ "${#}" -gt 0 ]; do
     case "${1}" in
-        --only-common )
-                ONLY_COMMON=true
-                ;;
-        --only-device-common )
-                ONLY_DEVICE_COMMON=true
-                ;;
-        --only-target )
-                ONLY_TARGET=true
-                ;;
-        -n | --no-cleanup )
-                CLEAN_VENDOR=false
-                ;;
-        -k | --kang )
-                KANG="--kang"
-                ;;
-        -s | --section )
-                SECTION="${2}"; shift
-                CLEAN_VENDOR=false
-                ;;
-        * )
-                SRC="${1}"
-                ;;
+        --only-common)
+            ONLY_COMMON=true
+            ;;
+        --only-device-common)
+            ONLY_DEVICE_COMMON=true
+            ;;
+        --only-firmware)
+            ONLY_FIRMWARE=true
+            ;;
+        --only-target)
+            ONLY_TARGET=true
+            ;;
+        -n | --no-cleanup)
+            CLEAN_VENDOR=false
+            ;;
+        -k | --kang)
+            KANG="--kang"
+            ;;
+        -s | --section)
+            SECTION="${2}"
+            shift
+            CLEAN_VENDOR=false
+            ;;
+        *)
+            SRC="${1}"
+            ;;
     esac
     shift
 done
@@ -65,16 +69,27 @@ fi
 function blob_fixup() {
     case "${1}" in
         vendor/bin/mlipayd@1.1)
+            [ "$2" = "" ] && return 0
            "${PATCHELF}" --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
             ;;
         vendor/lib64/libmlipay.so | vendor/lib64/libmlipay@1.1.so)
+            [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
             sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" "${2}"
             ;;
         vendor/bin/pm-service)
+            [ "$2" = "" ] && return 0
             grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
             ;;
+        *)
+            return 1
+            ;;
     esac
+    return 0
+}
+
+function blob_fixup_dry() {
+    blob_fixup "$1" ""
 }
 
 if [ -z "${ONLY_TARGET}" ] && [ -z "${ONLY_DEVICE_COMMON}" ]; then
