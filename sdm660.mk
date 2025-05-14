@@ -200,6 +200,11 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
     libhidlmemory.vendor
 
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+    
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
