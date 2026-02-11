@@ -20,7 +20,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/xiaomi/sdm660-common',
-    'hardware/qcom-caf/msm8996',
+    'hardware/qcom-caf/sdm660',
     'hardware/qcom/wlan/legacy',
     'hardware/xiaomi',
     'vendor/qcom/opensource/dataservices',
