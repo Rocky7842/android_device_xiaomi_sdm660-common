@@ -23,6 +23,7 @@ namespace_imports = [
     'hardware/qcom-caf/sdm660',
     'hardware/qcom-caf/wlan',
     'hardware/xiaomi',
+    'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/dataservices',
     'vendor/qcom/opensource/display',
 ]
