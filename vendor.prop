@@ -7,6 +7,7 @@ persist.vendor.audio.fluence.voicerec=false
 persist.vendor.audio.fluence.speaker=true
 vendor.audio.tunnel.encode=false
 persist.vendor.audio.ras.enabled=false
+persist.vendor.audio.vbat.enabled=true
 vendor.audio.offload.buffer.size.kb=64
 audio.offload.min.duration.secs=30
 audio.offload.video=true
