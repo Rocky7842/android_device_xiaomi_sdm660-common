@@ -177,6 +177,12 @@
       "Value": "0"
     },
     {
+      "PowerHint": "INTERACTION",
+      "Node": "GPUMinFreq",
+      "Duration": 0,
+      "Value": "370000000"
+    },
+    {
       "PowerHint": "LAUNCH",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 5000,
