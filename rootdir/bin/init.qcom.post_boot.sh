@@ -2525,10 +2525,10 @@ case "$target" in
         esac
 
         # Start cdsprpcd only for sdm660 and disable for sdm630 and sdm636
-        #case "$soc_id" in
-        #    "317" | "324" | "325" | "326" )
-        #    start vendor.cdsprpcd
-        #esac
+        case "$soc_id" in
+            "317" | "324" | "325" | "326" )
+            start vendor.cdsprpcd
+        esac
 
         #Apply settings for sdm630 and Tahaa
         case "$soc_id" in
