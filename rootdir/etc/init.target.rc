@@ -61,6 +61,10 @@ on post-fs
     wait_for_prop vendor.sys.listeners.registered true
     write /dev/ipa 1
 
+    # Tap to wake node
+    chown system system /sys/touchpanel/double_tap
+    chmod 0660 /sys/touchpanel/double_tap
+
 on late-fs
     mount_all /vendor/etc/fstab.qcom --late
 
