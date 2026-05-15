@@ -68,7 +68,8 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.primary.sdm660 \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    sound_trigger.primary.sdm660
 
 PRODUCT_PACKAGES += \
     liba2dpoffload \
