@@ -119,6 +119,8 @@ PRODUCT_PACKAGES += \
     libpng.vendor \
     vendor.qti.hardware.camera.device@1.0:64
 
+$(call soong_config_set,libcameraservice,ext_lib,//$(LOCAL_PATH):libcameraservice_extension.xiaomi_sdm660)
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore

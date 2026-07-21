@@ -395,3 +395,8 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # Charger
 /sys/class/power_supply/battery  charging_enabled    0660    system  system
+
+# torch
+/sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:switch_0 brightness 0660 cameraserver camera
+/sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0 brightness 0660 cameraserver camera
+/sys/devices/platform/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0 max_brightness 0660 cameraserver camera
